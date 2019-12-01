@@ -20,7 +20,7 @@ def star_distribution(csv_filename='StarDistribution.csv'):
     return data_list
 
 
-def move_comment(csv_filename='MovieComment.csv'):
+def movie_comment(csv_filename='MovieComment.csv'):
     data = pd.read_csv(csv_filename)
     data_list = data.values.tolist()
     return data_list
