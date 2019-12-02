@@ -129,3 +129,4 @@ dmypy.json
 .pyre/
 # my file to be ignored
 test.py
+.idea/
