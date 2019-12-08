@@ -1,5 +1,5 @@
 import math
-import matplotlib.pyplot as plt
+import Datapreprocess
 
 
 def getEuclidean(point1, point2):
@@ -67,3 +67,8 @@ def k_means(dataset, k, iteration):
 def show_clusters(clusters):
     for each in clusters:
         print(each)
+
+
+def main():
+    data = Datapreprocess.star_distribution()
+    k_means(data, 4, 10)
