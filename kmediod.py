@@ -34,40 +34,72 @@ kmedoids_instance.process()
 # points = [[0.35, 0.5], [2.5, 2.0]]
 # closest_clusters = kmedoids_instance.predict(points)
 clusters = kmedoids_instance.get_clusters()
+final_cluster = []
+
 f_type_cluster = []
+f_index = []
 for item in clusters[0]:  # f type
     # print(data_set[item], end="")
+    # print(item, end="")
+    f_index.append(item)
     f_type_cluster.append(data_set[item])
 
+final_cluster.append(f_index)
+
 p_type_cluster = []
+p_index = []
 for item in clusters[1]:  # p type
     # print(data_set[item], item, end="")
+    # print(item, end="")
     p_type_cluster.append(data_set[item])
+    p_index.append(item)
 for item in clusters[2]:
     # print(data_set[item], item, end="")
+    # print(item, end="")
     p_type_cluster.append(data_set[item])
+    p_index.append(item)
+
+final_cluster.append(p_index)
 
 v_type_cluster = []
+v_index = []
 for item in clusters[3]:  # > type
     # print(data_set[item], item, end="")
+    # print(item, end="")
     v_type_cluster.append(data_set[item])
+    v_index.append(item)
 
 for item in clusters[5]:
     # print(data_set[item], item, end="")
+    # print(item, end="")
     v_type_cluster.append(data_set[item])
+    v_index.append(item)
+
+final_cluster.append(v_index)
 
 b_type_cluster = []
+b_index = []
 for item in clusters[4]:  # b type
     # print(data_set[item], item, end="")
+    # print(item, end="")
     b_type_cluster.append(data_set[item])
+    b_index.append(item)
 
+final_cluster.append(b_index)
 
 l_type_cluster = []
+l_index = []
 for item in clusters[6]:  # L type
     # print(data_set[item], item, end="")
+    # print(item, end="")
     l_type_cluster.append(data_set[item])
+    l_index.append(item)
 
+final_cluster.append(l_index)
 
+for each in final_cluster:
+    print(each)
+'''
 f_type = pd.DataFrame(f_type_cluster, columns=['Movie_Name', 'Star_Distribution'])
 p_type = pd.DataFrame(p_type_cluster, columns=['Movie_Name', 'Star_Distribution'])
 v_type = pd.DataFrame(v_type_cluster, columns=['Movie_Name', 'Star_Distribution'])
@@ -84,8 +116,8 @@ p_type.to_csv(r'D:\python_ml\Datamining\DataMiningFinalProject\Data\p_type_clust
 v_type.to_csv(r'D:\python_ml\Datamining\DataMiningFinalProject\Data\v_type_cluster.csv', index=None, header=True)
 b_type.to_csv(r'D:\python_ml\Datamining\DataMiningFinalProject\Data\b_type_cluster.csv', index=None, header=True)
 l_type.to_csv(r'D:\python_ml\Datamining\DataMiningFinalProject\Data\l_type_cluster.csv', index=None, header=True)
-
+'''
 # print(closest_clusters)
-# visualizer = cluster_visualizer_multidim();
-# visualizer.append_clusters(clusters, sample);
-# visualizer.show();
+visualizer = cluster_visualizer_multidim()
+visualizer.append_clusters(final_cluster, sample)
+visualizer.show()
